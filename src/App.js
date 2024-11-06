@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes ,Route} from "react-router-dom";
+import Admin from './Pages/AdminHome';
+import '../src/index.css'
+import AdminLogin from "./Pages/AdminLogin";
+import AddingQuiz from "./Pages/AddingQuiz";
+import AdminProfile from "./Pages/AdminProfile";
+
+
+
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/admin" element={<Admin></Admin>}/>
+      <Route path="/adminlogin" element={<AdminLogin></AdminLogin>}/>
+      <Route path="/addquiz" element={<AddingQuiz></AddingQuiz>}/>
+      <Route path="/adminprofile" element={<AdminProfile></AdminProfile>}/>
+
+
+
+    </Routes>
   );
 }
 
